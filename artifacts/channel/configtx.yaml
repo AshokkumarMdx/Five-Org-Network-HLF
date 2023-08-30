@@ -63,7 +63,7 @@ Organizations:
         AnchorPeers:
             - Host: peer0.org2.example.com
               Port: 9051
-
+    
     - &Org3
         Name: Org3MSP
         ID: Org3MSP
@@ -87,8 +87,7 @@ Organizations:
 
         AnchorPeers:
             - Host: peer0.org3.example.com
-              Port: 1051
-
+              Port: 11051
     - &Org4
         Name: Org4MSP
         ID: Org4MSP
@@ -111,9 +110,8 @@ Organizations:
             #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.org3.example.com
-              Port: 11051
-
+            - Host: peer0.org4.example.com
+              Port: 13051
     - &Org5
         Name: Org5MSP
         ID: Org5MSP
@@ -136,8 +134,9 @@ Organizations:
             #     Rule: "OR('Org1MSP.admin')"
 
         AnchorPeers:
-            - Host: peer0.org3.example.com
-              Port: 12051
+            - Host: peer0.org5.example.com
+              Port: 15051
+
 
 Capabilities:
     Channel: &ChannelCapabilities
@@ -318,7 +317,7 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                # - *Org5
+                - *Org5                                
             Capabilities:
                 <<: *ApplicationCapabilities
     OrdererGenesis:
@@ -358,4 +357,4 @@ Profiles:
                 - *Org2
                 - *Org3
                 - *Org4
-                # - *Org5
+                - *Org5                                
